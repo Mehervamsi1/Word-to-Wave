@@ -1,22 +1,27 @@
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: linear-gradient(to right, #ece9e6, #ffffff);
-    color: #333;
+    background: linear-gradient(to right, #74f1cc75, #ccece8);
+    color: #118374;
 }
 
 header {
-    background-color: rgba(51, 51, 51, 0.9);
+    background-color: #118374;
+    background: linear-gradient(to right, #118374, #07bba3);
     color: white;
     padding: 1em;
-    text-align: center;
+    padding-left: 2em;
+    text-align: left;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+  
 main {
     flex: 1;
     padding: 2em;
@@ -43,6 +48,7 @@ section:hover {
     color: #333;
     cursor: pointer;
     transition: color 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .icon:hover {
@@ -58,6 +64,7 @@ section:hover {
     margin: 1em auto;
     border: 2px solid rgba(51, 51, 51, 0.9);
     border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
