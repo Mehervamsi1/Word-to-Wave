@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech to Text and Animation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script defer src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Speech to Text and Animation</h1>
+    </header>
+
+    <main>
+        <!-- Speech Input Section -->
+        <section id="speech-input">
+            <h2>Speech Input</h2>
+            <div class="icon" id="record-icon">
+                <i class="fas fa-microphone"></i>
+            </div>
+            <p>Click the microphone to start and stop recording</p>
+        </section>
+
+        <!-- Text Output Section -->
+        <section id="text-output">
+            <h2>Text Output</h2>
+            <div id="transcription">
+                <!-- Transcription will appear here -->
+            </div>
+        </section>
+
+        <!-- Animation Output Section -->
+        <section id="animation-output">
+            <h2>Animation Output</h2>
+            <div id="animation">
+                <!-- Animation will appear here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Group 1 Lambton College </p>
+    </footer>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</body>
+
+</html>
