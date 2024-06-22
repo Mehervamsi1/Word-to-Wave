@@ -1,0 +1,11 @@
+-f https://download.pytorch.org/whl/torch_stable.html
+torch==2.0.0+cpu
+torchvision==0.15.0+cpu
+ffmpeg
+openai-whisper
+numpy
+flask
+levenshtein
+regex==2023.6.3
+opencv-python
+mediapipe==0.10.1
