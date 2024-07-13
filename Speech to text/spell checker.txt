@@ -1,0 +1,67 @@
+Spell Checking Mechanism:
+
+
+
+# Pre-processing stage: Add spell checking before tokenizing the text data
+
+from spellchecker import SpellChecker
+spell = SpellChecker()
+
+def correct_spelling(text):
+    corrected_text = []
+    for word in text.split():
+        corrected_word = spell.correction(word)
+        corrected_text.append(corrected_word)
+    return ' '.join(corrected_text)
+
+# Assuming 'transcripts' is your list of transcript strings
+transcripts = [correct_spelling(transcript) for transcript in transcripts]
+
+# Tokenization and padding sequences
+tokenizer = Tokenizer(oov_token='<OOV>')
+tokenizer.fit_on_texts(transcripts)
+sequences = tokenizer.texts_to_sequences(transcripts)
+padded_sequences = pad_sequences(sequences, padding='post')
+
+# Model training steps here...
+
+# Post-processing stage: Add spell checking after generating the predictions
+
+def correct_predictions(predictions, tokenizer):
+    reverse_word_map = dict(map(reversed, tokenizer.word_index.items()))
+    corrected_predictions = []
+    for seq in predictions:
+        words = [reverse_word_map.get(i, '') for i in seq]
+        corrected_sentence = correct_spelling(' '.join(words))
+        corrected_predictions.append(corrected_sentence)
+    return corrected_predictions
+
+# Generate predictions for the test set
+y_pred = model.predict([X_test, decoder_input_test])
+y_pred_texts = correct_predictions(y_pred.argmax(axis=-1), tokenizer)
+
+# Convert ground truth to text
+y_true_texts = sequences_to_texts(y_test, tokenizer)
+
+# Calculate WER and CER
+wer_score = wer(y_true_texts, y_pred_texts)
+cer_score = cer(y_true_texts, y_pred_texts)
+
+print(f"Word Error Rate (WER): {wer_score}")
+print(f"Character Error Rate (CER): {cer_score}")
+
+
+
+Explanation:
+Pre-processing:
+
+A function correct_spelling is created to correct the spelling of each word in the transcripts.
+This function is applied to each transcript before tokenization and padding.
+Post-processing:
+
+A function correct_predictions is created to correct the spelling of the predicted sequences.
+This function is applied to the model's predicted sequences before calculating WER and CER.
+This balanced approach ensures that your training data is clean and that the output text is correctly spelled, which helps in reducing WER and CER while maintaining the model's ability to generalize well to real-world data. 
+
+
+
