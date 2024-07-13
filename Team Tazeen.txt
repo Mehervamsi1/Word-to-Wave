@@ -1,0 +1,13 @@
+Team Tazeen
+Members:
+Meher Vamsi Dontoju (C0893004)
+Rudraksh Bahri(C0891302)
+Sarveswararao Patchipulusu(C0892924)
+Tazeen Singh Sudan (C0891287)
+
+Trello Board:
+https://trello.com/invite/b/lBH8RyEM/ATTI2117ba02674cd7df54daed61e5432840B1464EC8/team-tazeen
+Google Colab Notebook:
+https://colab.research.google.com/drive/1wgcIsClQ8hUMuEmZC5jeKEDtQyz0aUbk?usp=sharing
+
+
