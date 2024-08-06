@@ -1,25 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Speech to Text and Animation</title>
-    <link rel="stylesheet" href="static/CSS/styles.css">
-    <script defer src="static/JS/scripts.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Word to Wave</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/CSS/styles.css">
 </head>
-
 <body>
-    <header>
+    <div class="landing-page">
+        <div class="galaxy-background"></div>
         <h1>Word to Wave</h1>
-    </header>
+        <button id="scrollButton">Let's start waving</button>
+    </div>
 
     <main>
-        <!-- Speech Input Section -->
         <section id="speech-input">
             <h2>Speech Input</h2>
             <div class="icon" id="record-icon">
@@ -28,7 +23,6 @@
             <p>Click the microphone to start and stop recording</p>
         </section>
 
-        <!-- Text Output Section -->
         <section id="text-output">
             <h2>Text Output</h2>
             <div id="transcription">
@@ -36,7 +30,6 @@
             </div>
         </section>
 
-        <!-- Animation Output Section -->
         <section id="animation-output">
             <h2>Animation Output</h2>
             <div id="animation">
@@ -46,8 +39,9 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 Group 1 Lambton College </p>
+        <p>&copy; 2024 Word to Wave</p>
     </footer>
-</body>
 
+    <script src="static/JS/scripts.js"></script>
+</body>
 </html>

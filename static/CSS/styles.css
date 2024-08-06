@@ -1,99 +1,280 @@
-body {
-    font-family: "Poppins", sans-serif;
-    font-weight: 300;
-    font-style: normal;
+/* Reset and Base Styles */
+body, html {
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background: linear-gradient(to right, #74f1cc75, #ccece8);
-    color: #118374;
-}
-
-header {
-    background-color: #118374;
-    background: linear-gradient(to right, #118374, #07bba3);
+    font-family: 'Poppins', sans-serif;
     color: white;
-    padding: 1em;
-    padding-left: 2em;
-    text-align: left;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #0b0c10;
+    height: 100%;
+    overflow-x: hidden;
 }
 
-  
-main {
-    flex: 1;
-    padding: 2em;
+/* Landing Page Styles */
+.landing-page {
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: 2em;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0b0c10 0%, #1f2833 100%);
+    position: relative;
+    text-align: center;
+}
+
+.galaxy-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('static/images/Firefly Generate a Galaxy full of stars on a mountain from the earth view beautiful mountains milky .jpg') no-repeat center center/cover;
+    z-index: -1;
+    animation: starMove 50s linear infinite;
+}
+
+@keyframes starMove {
+    0% { background-position: 0 0; }
+    100% { background-position: -2000px -2000px; }
+}/* Reset and Base Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background-color: #0b0c10;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* Landing Page Styles */
+.landing-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0b0c10 0%, #1f2833 100%);
+    position: relative;
+    text-align: center;
+}
+
+.galaxy-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('static/images/galaxy.jpg') no-repeat center center/cover;
+    z-index: -1;
+    animation: starMove 50s linear infinite;
+}
+
+@keyframes starMove {
+    0% { background-position: 0 0; }
+    100% { background-position: -2000px -2000px; }
+}
+
+.landing-page h1 {
+    font-size: 4rem;
+    color: #66fcf1;
+    text-shadow: 0px 0px 20px rgba(102, 252, 241, 0.7);
+}
+
+.landing-page button {
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    border: none;
+    background-color: #45a29e;
+    color: #1f2833;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0px 10px 30px rgba(69, 162, 158, 0.5);
+    transition: all 0.3s ease;
+}
+
+.landing-page button:hover {
+    background-color: #66fcf1;
+    color: #0b0c10;
+    box-shadow: 0px 20px 50px rgba(102, 252, 241, 0.7);
+}
+
+/* Main Section Styles */
+main {
+    padding: 50px;
+    background: linear-gradient(135deg, #1f2833 0%, #0b0c10 100%);
+}
+
+header h1 {
+    font-size: 3rem;
+    text-align: center;
+    color: #66fcf1;
+    margin-bottom: 30px;
 }
 
 section {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 2em;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: background 0.3s, box-shadow 0.3s;
-}
-
-section:hover {
-    background: rgba(255, 255, 255, 1);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
 }
 
 .icon {
-    font-size: 3em;
-    color: #333;
+    font-size: 4rem;
+    color: #45a29e;
     cursor: pointer;
-    transition: color 0.3s;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.icon:hover {
-    color: #555;
-}
-
-#record-icon {
+    transition: transform 0.3s, color 0.3s;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
-    height: 100px;
-    margin: 1em auto;
-    border: 2px solid rgba(51, 51, 51, 0.9);
-    border-radius: 50%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
-#record-icon.active {
-    background-color: rgba(255, 0, 0, 0.9);
-    color: white;
-    border-color: rgba(255, 0, 0, 0.9);
+.icon:hover {
+    transform: scale(1.2);
+    color: #66fcf1;
 }
 
 #transcription {
-    font-size: 1.2em;
-    color: #333;
-    background: rgba(249, 249, 249, 0.9);
-    padding: 1em;
-    border-radius: 8px;
+    font-size: 1.5rem;
+    color: #c5c6c7;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
     min-height: 100px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background 0.3s, box-shadow 0.3s;
-}
-
-#transcription:focus {
-    background: rgba(249, 249, 249, 1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 footer {
-    background-color: rgba(51, 51, 51, 0.9);
-    color: white;
     text-align: center;
-    padding: 1em;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #1f2833;
+    color: #c5c6c7;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .landing-page h1 {
+        font-size: 2.5rem;
+    }
+
+    .landing-page button {
+        font-size: 1.2rem;
+        padding: 10px 30px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .icon {
+        font-size: 3rem;
+    }
+
+    section {
+        padding: 20px;
+    }
+}
+
+
+.landing-page h1 {
+    font-size: 4rem;
+    color: #66fcf1;
+    text-shadow: 0px 0px 20px rgba(102, 252, 241, 0.7);
+}
+
+.landing-page button {
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    border: none;
+    background-color: #45a29e;
+    color: #1f2833;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0px 10px 30px rgba(69, 162, 158, 0.5);
+    transition: all 0.3s ease;
+}
+
+.landing-page button:hover {
+    background-color: #66fcf1;
+    color: #0b0c10;
+    box-shadow: 0px 20px 50px rgba(102, 252, 241, 0.7);
+}
+
+/* Main Section Styles */
+main {
+    padding: 50px;
+    background: linear-gradient(135deg, #1f2833 0%, #0b0c10 100%);
+}
+
+header h1 {
+    font-size: 3rem;
+    text-align: center;
+    color: #66fcf1;
+    margin-bottom: 30px;
+}
+
+section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+}
+
+.icon {
+    font-size: 4rem;
+    color: #45a29e;
+    cursor: pointer;
+    transition: transform 0.3s, color 0.3s;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+    color: #66fcf1;
+}
+
+#transcription {
+    font-size: 1.5rem;
+    color: #c5c6c7;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    min-height: 100px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1f2833;
+    color: #c5c6c7;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .landing-page h1 {
+        font-size: 2.5rem;
+    }
+
+    .landing-page button {
+        font-size: 1.2rem;
+        padding: 10px 30px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .icon {
+        font-size: 3rem;
+    }
+
+    section {
+        padding: 20px;
+    }
 }
