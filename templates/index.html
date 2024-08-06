@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word To Wave</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Word To Wave</h1>
+<!--        <p>Transforming Spoken Words Into Sign Language Visuals</p>-->
+        <a href="{{ url_for('next_page') }}" class="btn">Continue</a>
+    </div>
+    <button class="about-btn" onclick="toggleAbout()">About</button>
+    <div id="aboutModal" class="about-modal">
+        <p>Word to Wave is a project that transforms spoken words into visual sign language. Our mission is to bridge the communication gap for the hearing impaired through innovative technology.</p>
+    </div>
+    <script>
+        function toggleAbout() {
+            var modal = document.getElementById('aboutModal');
+            modal.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>

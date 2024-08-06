@@ -1,0 +1,189 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Speech to Text and Animation</title>-->
+<!--    <link rel="stylesheet" href="static/next_page.css">-->
+<!--    <script defer src="static/scripts/next_page.js"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>-->
+<!--    <link rel="preconnect" href="https://fonts.googleapis.com">-->
+<!--    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">-->
+<!--</head>-->
+
+<!--<body>-->
+<!--    <header>-->
+<!--        <div class="container">-->
+<!--            <h1>Word To Wave</h1>-->
+<!--        </div>-->
+<!--    </header>-->
+
+<!--    <main>-->
+<!--        <div class="left-side">-->
+<!--            &lt;!&ndash; Speech Input Section &ndash;&gt;-->
+<!--            <section id="speech-input">-->
+<!--                <h2>Speech Input</h2>-->
+<!--                <div class="icon" id="record-icon">-->
+<!--                    <i class="fas fa-microphone"></i>-->
+<!--                </div>-->
+<!--                <p>Click the microphone to start and stop recording</p>-->
+<!--            </section>-->
+
+<!--            &lt;!&ndash; Text Output Section &ndash;&gt;-->
+<!--            <section id="text-output">-->
+<!--                <h2>Text Output</h2>-->
+<!--                <div id="transcription" contenteditable="true">-->
+<!--                    &lt;!&ndash; Transcription will appear here &ndash;&gt;-->
+<!--                </div>-->
+<!--            </section>-->
+<!--        </div>-->
+
+<!--        <div class="right-side">-->
+<!--            &lt;!&ndash; Animation Output Section &ndash;&gt;-->
+<!--            <section id="animation-output">-->
+<!--                <h2>Animation Output</h2>-->
+<!--                <div id="animation">-->
+<!--                    <video src="static/Alphabets/O.mp4" autoplay muted loop>-->
+<!--                        M-->
+<!--                    </video>-->
+<!--                </div>-->
+<!--            </section>-->
+<!--        </div>-->
+<!--    </main>-->
+
+<!--    <footer>-->
+<!--        <p>&copy; 2024 Group 1 Lambton College </p>-->
+<!--    </footer>-->
+<!--</body>-->
+
+<!--</html>-->
+
+
+
+
+<!--this is the code to play videos continulsy m n o p r-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech to Text and Animation</title>
+    <link rel="stylesheet" href="static/next_page.css">
+    <script defer src="static/scripts/next_page.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <style>
+    #animation {
+        position: relative;
+        width: 100%;
+        height: 450px;
+        background: url('static/HAND.png') no-repeat center center;
+        background-size: cover;
+    }
+
+    #video-player {
+        width: 100%;
+        height: 450px;
+        position: relative;
+        z-index: 1;
+    }
+
+    #animation::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+<!--        background: rgba(0, 0, 0, 0.5); /* Optional: To add a dark overlay */-->
+        z-index: 0;
+    }
+</style>
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Word To Wave</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="left-side">
+            <!-- Speech Input Section -->
+            <section id="speech-input">
+                <h2>Speech Input</h2>
+                <div class="icon" id="record-icon">
+                    <i class="fas fa-microphone"></i>
+                </div>
+                <p>Click the microphone to start and stop recording</p>
+            </section>
+
+            <!-- Text Output Section -->
+            <section id="text-output">
+                <h2>Text Output</h2>
+                <div id="transcription" contenteditable="true">
+                    <!-- Transcription will appear here -->
+                </div>
+            </section>
+        </div>
+
+        <div class="right-side">
+            <!-- Animation Output Section -->
+            <section id="animation-output">
+                <h2>Animation Output</h2>
+                <div id="animation">
+                    <video id="video-player" width="100%" height="auto" muted autoplay>
+
+                    </video>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Group 1 Lambton College </p>
+    </footer>
+
+    <script>
+        const videoPlayer = document.getElementById('video-player');
+<!--        const videos = [-->
+<!--            'static/Alphabets/C.mp4',-->
+<!--            'static/Alphabets/A.mp4',-->
+<!--            'static/Alphabets/T.mp4'-->
+<!--        ];-->
+        let currentVideoIndex = 0;
+
+        // Preload the next video
+        const preloadNextVideo = () => {
+            const nextVideoIndex = (currentVideoIndex + 1) % videos.length;
+            const nextVideo = document.createElement('video');
+            nextVideo.src = videos[nextVideoIndex];
+            nextVideo.load();
+        };
+
+        videoPlayer.addEventListener('ended', () => {
+            currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+            videoPlayer.src = videos[currentVideoIndex];
+            videoPlayer.play();
+            preloadNextVideo(); // Preload the next video
+        });
+
+        // Start playing the first video and preload the second one
+        videoPlayer.src = videos[currentVideoIndex];
+        videoPlayer.play();
+        preloadNextVideo(); // Preload the next video
+    </script>
+</body>
+
+</html>
