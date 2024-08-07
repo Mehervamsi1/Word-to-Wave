@@ -8,42 +8,44 @@
     <link rel="stylesheet" href="static/CSS/styles.css">
 </head>
 <body>
-    <div class="landing-page">
-        <div class="galaxy-background"></div>
-        <h1>Word to Wave</h1>
-        <button id="scrollButton">
-            <!-- Inline SVG Icon -->
-            Let's start waving
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                <path d="M23.12,9.91,19.25,6a1,1,0,0,0-1.42,0h0a1,1,0,0,0,0,1.41L21.39,11H1a1,1,0,0,0-1,1H0a1,1,0,0,0,1,1H21.45l-3.62,3.61a1,1,0,0,0,0,1.42h0a1,1,0,0,0,1.42,0l3.87-3.88A3,3,0,0,0,23.12,9.91Z"/>
-            </svg>
-            
-        </button>
+    <nav class="navbar">
+        <h1 class="nav-title">Word to Wave</h1>
+    </nav>
+    <div class="title-container">
+        <h1 id="title">Word to Wave</h1>
     </div>
 
-    <main>
-        <section id="speech-input">
-            <h2>Speech Input</h2>
-            <div class="icon" id="record-icon">
-                <i class="fas fa-microphone"></i>
-            </div>
-            <p>Click the microphone to start and stop recording</p>
-        </section>
+    <section class="description-section">
+        <div class="description-summary">
+            <h2>Project Summary</h2>
+            <p>This project involves creating a website that converts spoken language into American Sign Language (ASL) using video output. The user speaks into a microphone, and the website processes the speech to display corresponding ASL videos.</p>
+            <button id="scroll-button" onclick="scrollToMainSection()">
+                Let's start waving
+                <i class="fi fi-rr-arrow-right"></i>
+            </button>
+        </div>
+        <div class="description-image">
+            <img src="static/images/hand.jpg" alt="Project Image">
+        </div>
+    </section>
 
-        <section id="text-output">
+    <section class="main-section">
+        <div class="content-input">
+            <h2>Content Input</h2>
+            <p>Input content area...</p>
+        </div>
+        <div class="text-output">
             <h2>Text Output</h2>
-            <div id="transcription">
-                <!-- Transcription will appear here -->
-            </div>
-        </section>
-
-        <section id="animation-output">
-            <h2>Animation Output</h2>
-            <div id="animation">
-                <!-- Animation will appear here -->
-            </div>
-        </section>
-    </main>
+            <p>Text output area...</p>
+        </div>
+        <div class="video-output">
+            <h2>Video Output</h2>
+            <video width="1080" height="720" controls>
+                <source src="static/videos/sample-asl.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
 
     <footer>
         <p>&copy; 2024 Word to Wave</p>
