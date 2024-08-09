@@ -155,35 +155,35 @@
         <p>&copy; 2024 Group 1 Lambton College </p>
     </footer>
 
-    <script>
-        const videoPlayer = document.getElementById('video-player');
-<!--        const videos = [-->
-<!--            'static/Alphabets/C.mp4',-->
-<!--            'static/Alphabets/A.mp4',-->
-<!--            'static/Alphabets/T.mp4'-->
-<!--        ];-->
-        let currentVideoIndex = 0;
+<!--    <script>-->
+<!--        const videoPlayer = document.getElementById('video-player');-->
+<!--&lt;!&ndash;        const videos = [&ndash;&gt;-->
+<!--&lt;!&ndash;            'static/Alphabets/C.mp4',&ndash;&gt;-->
+<!--&lt;!&ndash;            'static/Alphabets/A.mp4',&ndash;&gt;-->
+<!--&lt;!&ndash;            'static/Alphabets/T.mp4'&ndash;&gt;-->
+<!--&lt;!&ndash;        ];&ndash;&gt;-->
+<!--        let currentVideoIndex = 0;-->
 
-        // Preload the next video
-        const preloadNextVideo = () => {
-            const nextVideoIndex = (currentVideoIndex + 1) % videos.length;
-            const nextVideo = document.createElement('video');
-            nextVideo.src = videos[nextVideoIndex];
-            nextVideo.load();
-        };
+<!--        // Preload the next video-->
+<!--        const preloadNextVideo = () => {-->
+<!--            const nextVideoIndex = (currentVideoIndex + 1) % videos.length;-->
+<!--            const nextVideo = document.createElement('video');-->
+<!--            nextVideo.src = videos[nextVideoIndex];-->
+<!--            nextVideo.load();-->
+<!--        };-->
 
-        videoPlayer.addEventListener('ended', () => {
-            currentVideoIndex = (currentVideoIndex + 1) % videos.length;
-            videoPlayer.src = videos[currentVideoIndex];
-            videoPlayer.play();
-            preloadNextVideo(); // Preload the next video
-        });
+<!--        videoPlayer.addEventListener('ended', () => {-->
+<!--            currentVideoIndex = (currentVideoIndex + 1) % videos.length;-->
+<!--            videoPlayer.src = videos[currentVideoIndex];-->
+<!--            videoPlayer.play();-->
+<!--            preloadNextVideo(); // Preloadtranscription the next video-->
+<!--        });-->
 
-        // Start playing the first video and preload the second one
-        videoPlayer.src = videos[currentVideoIndex];
-        videoPlayer.play();
-        preloadNextVideo(); // Preload the next video
-    </script>
+<!--        // Start playing the first video and preload the second one-->
+<!--        videoPlayer.src = videos[currentVideoIndex];-->
+<!--        videoPlayer.play();-->
+<!--        preloadNextVideo(); // Preload the next video-->
+<!--    </script>-->
 </body>
 
 </html>
