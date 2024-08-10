@@ -81,6 +81,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 
+
     <style>
     #animation {
         position: relative;
@@ -121,12 +122,36 @@
     <main>
         <div class="left-side">
             <!-- Speech Input Section -->
+<!--            this is just mic section without upload-->
+<!--            <section id="speech-input">-->
+<!--                <h2>Speech Input</h2>-->
+<!--                <div class="icon" id="record-icon">-->
+<!--                    <i class="fas fa-microphone"></i>-->
+<!--                </div>-->
+<!--                <p>Click the microphone to start and stop recording</p>-->
+<!--            </section>-->
+
+<!--            Speech Input and mic and upload Section -->
             <section id="speech-input">
                 <h2>Speech Input</h2>
-                <div class="icon" id="record-icon">
-                    <i class="fas fa-microphone"></i>
+
+                <div class="input-section">
+                    <!-- Microphone Section -->
+                    <div class="microphone-section">
+                        <div class="icon" id="record-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <p>Click Microphone</p>
+                    </div>
+
+                    <!-- File Upload Section -->
+                    <div class="upload-section">
+                        <label for="file-upload" class="custom-file-upload">
+                            <i class="fas fa-upload"></i> Upload File
+                        </label>
+                        <input type="file" id="file-upload" accept=".wav" style="display: none;">
+                    </div>
                 </div>
-                <p>Click the microphone to start and stop recording</p>
             </section>
 
             <!-- Text Output Section -->

@@ -58,7 +58,7 @@ os.makedirs('static/Recordings', exist_ok=True)
 def index():
     return render_template('index.html')
 
-@app.route('/next_page')
+@app.route('/wordToWave')
 def next_page():
     return render_template('next_page.html')
 
@@ -83,7 +83,26 @@ def save_audio():
 
 @app.route('/get_text_output', methods=['GET'])
 def get_text_output():
-    return 'Hi success'
+    return 'Hi 1234?'
+
+
+
+@app.route('/upload', methods=['POST'])
+def upload_wav():
+    if 'file' not in request.files:
+        return 'No file part', 400
+
+    file = request.files['file']
+
+    if file.filename == '':
+        return 'No selected file', 400
+
+    if file and file.filename.endswith('.wav'):
+        save_path = os.path.join('static/Recordings', 'recording.wav')
+        file.save(save_path)
+        return 'File uploaded successfully', 200
+
+    return 'Invalid file type', 400
 
 if __name__ == '__main__':
     app.run(debug=True)

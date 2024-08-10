@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }).then(text => {
                         // Clean the text: remove non-alphabetical characters and spaces
                         transcription.innerHTML = text;
-                        const cleanedText = text.replace(/[^a-zA-Z0-9]/g, '').toUpperCase();
+                        const cleanedText = text.replace(/[^a-zA-Z0-9 ]/g, '').toUpperCase();
 
                         // Convert cleaned text to an array of characters
                         const charArray = cleanedText.split('');
@@ -180,7 +180,37 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// Function to play videos based on character array
+//// Function to play videos based on character array
+//function playCharacterVideos(charArray) {
+//    const videoPlayer = document.getElementById('video-player');
+//    let currentCharIndex = 0;
+//
+//    // Function to load and play the next video
+//    const playNextVideo = () => {
+//        if (currentCharIndex < charArray.length) {
+//            const currentChar = charArray[currentCharIndex];
+//            console.log(currentChar, 'current_character')
+//
+//            const videoPath = `static/Alphabets/${currentChar}.mp4`;
+//
+//            videoPlayer.src = videoPath;
+//            videoPlayer.play();
+//
+//            // When the current video ends, move to the next character's video
+//            videoPlayer.onended = () => {
+//                currentCharIndex++;
+//                playNextVideo();
+//            };
+//        }
+//    };
+//
+//    // Start playing the first video
+//    playNextVideo();
+//}
+
+
+
+
 function playCharacterVideos(charArray) {
     const videoPlayer = document.getElementById('video-player');
     let currentCharIndex = 0;
@@ -189,17 +219,25 @@ function playCharacterVideos(charArray) {
     const playNextVideo = () => {
         if (currentCharIndex < charArray.length) {
             const currentChar = charArray[currentCharIndex];
-            console.log(currentChar, 'sajks')
-            const videoPath = `static/Alphabets/${currentChar}.mp4`;
+            console.log(currentChar, 'current_character')
+            if (currentChar === ' ') {
+                // If the current character is a space, add a delay before playing the next video
+                setTimeout(() => {
+                    currentCharIndex++;
+                    playNextVideo();
+                }, 700); // Adjust the delay (in milliseconds) as needed
+            } else {
+                const videoPath = `static/Alphabets/${currentChar}.mp4`;
 
-            videoPlayer.src = videoPath;
-            videoPlayer.play();
+                videoPlayer.src = videoPath;
+                videoPlayer.play();
 
-            // When the current video ends, move to the next character's video
-            videoPlayer.onended = () => {
-                currentCharIndex++;
-                playNextVideo();
-            };
+                // When the current video ends, move to the next character's video
+                videoPlayer.onended = () => {
+                    currentCharIndex++;
+                    playNextVideo();
+                };
+            }
         }
     };
 
@@ -208,7 +246,51 @@ function playCharacterVideos(charArray) {
 }
 
 
-////below is the code after adding mapping
+
+
+
+
+
+/* this code is for speech mic and upload section */
+
+document.getElementById('file-upload').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+
+    if (file && file.type === 'audio/wav') {
+        const formData = new FormData();
+        formData.append('file', file);
+
+        fetch('/upload', {
+            method: 'POST',
+            body: formData
+        }).then(response => {
+            if (response.ok) {
+                console.log('File uploaded successfully');
+                // You can also display a message or update the UI here
+            } else {
+                console.error('Failed to upload the file');
+            }
+        }).catch(error => {
+            console.error('Error uploading the file:', error);
+        });
+    } else {
+        alert('Please upload a valid WAV file.');
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+////below is the code after adding mapping  not include dont uncomment this, not required
 //
 //document.addEventListener('DOMContentLoaded', () => {
 //    const recordIcon = document.getElementById('record-icon');
