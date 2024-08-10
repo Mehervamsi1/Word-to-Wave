@@ -35,14 +35,14 @@ header .container {
 header h1 {
     margin: 0; /* Remove default margin */
     color: #ffffff; /* White text color */
-    text-shadow:
-        0 0 3px #000000, /* Black outline */
-        0 0 6px #000000, /* Black outline */
-        0 0 9px #000000, /* Black outline */
-        0 0 12px #000000, /* Black outline */
-        0 0 15px #000000, /* Black outline */
-        0 0 18px #000000, /* Black outline */
-        0 0 21px #000000; /* Black outline */
+/**    text-shadow:
+/**        0 0 3px #000000, /* Black outline */
+/**        0 0 6px #000000, /* Black outline */
+/**        0 0 9px #000000, /* Black outline */
+/**        0 0 12px #000000, /* Black outline */
+/**        0 0 15px #000000, /* Black outline */
+/**        0 0 18px #000000, /* Black outline */
+/**        0 0 21px #000000; /* Black outline */
     font-size: 1.5em; /* Smaller font size */
 }
 
