@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #000000; /* Black background */
+    color: #ffffff; /* White text color */
+}
+
+header {
+    background-color: #000000; /* Black background */
+    padding: 0.5em 1em; /* Reduced padding for the header */
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1em; /* Smaller font size */
+    font-family: 'Poppins', cursive; /* Cursive font */
+    position: relative;
+}
+
+header .container {
+    background: rgba(169, 169, 169, 0.5); /* Gray background with some transparency */
+    padding: 0.5em 1em;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for better visibility */
+    display: inline-block;
+}
+
+header h1 {
+    margin: 0; /* Remove default margin */
+    color: #ffffff; /* White text color */
+    /** text-shadow:
+      /**  0 0 3px #000000, /* Black outline */
+      /**  0 0 6px #000000, /* Black outline */
+     /**   0 0 9px #000000, /* Black outline */
+     /**   0 0 12px #000000, /* Black outline */
+     /**   0 0 15px #000000, /* Black outline */
+      /**  0 0 18px #000000, /* Black outline */
+      /**  0 0 21px #000000; /* Black outline */
+
+    font-size: 1.5em; /* Smaller font size */
+}
+
+main {
+    flex: 1;
+    display: flex;
+    min-height: calc(100vh - 80px); /* Adjusted to fit content in one page */
+}
+
+.left-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1em; /* Adjusted space between the sections */
+    padding: 1em; /* Reduced padding */
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background for left side */
+    height: 100%;
+}
+
+.right-side {
+    flex: 1.5;
+    padding: 1em; /* Reduced padding */
+    background: rgba(255, 255, 255, 0.2); /* Slightly more transparent background for right side */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distributes space between sections */
+}
+
+section {
+    background: rgba(255, 255, 255, 0.2); /* Slightly more transparent white */
+    padding: 1em; /* Adjusted padding */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s, box-shadow 0.3s;
+    overflow: hidden; /* Ensures content doesn't overflow */
+}
+
+section:hover {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+#speech-input {
+    flex: 1;
+}
+
+#text-output {
+    flex: 1;
+    min-height: 100px; /* Adjusted minimum height */
+    margin-bottom: 1em; /* Space between text output and animation output */
+}
+
+#animation-output {
+    flex: 1;
+
+}
+
+#transcription {
+    font-size: 1em; /* Slightly smaller font size */
+    color: #ffffff; /* White text color */
+    background: rgba(255, 255, 255, 0.3); /* Slightly transparent white */
+    padding: 1em; /* Increased padding */
+    border-radius: 8px;
+    min-height: 132px; /* Adjusted height */
+    max-height: 132px; /* Set maximum height to ensure scrolling */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s, box-shadow 0.3s;
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    word-wrap: break-word; /* Ensure long words wrap within the container */
+    max-width: 427px
+}
+
+/* Custom scrollbar styling for WebKit browsers (Chrome, Safari) */
+#transcription::-webkit-scrollbar {
+    width: 8px; /* Width of the vertical scrollbar */
+}
+
+#transcription::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.2); /* Background color of the scrollbar track */
+    border-radius: 8px; /* Rounded corners of the scrollbar track */
+}
+
+#transcription::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3); /* Color of the scrollbar thumb */
+    border-radius: 8px; /* Rounded corners of the scrollbar thumb */
+    border: 2px solid transparent; /* Space around the thumb */
+    background-clip: content-box; /* Clip the background to the padding box */
+}
+
+/* Custom scrollbar styling for Firefox */
+#transcription {
+    scrollbar-width: thin; /* Makes the scrollbar thinner */
+    scrollbar-color: rgba(0, 0, 0, 0.3) rgba(255, 255, 255, 0.2); /* Thumb and track colors */
+}
+
+
+#transcription:focus {
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.icon {
+    font-size: 2em; /* Adjusted size */
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.icon:hover {
+    color: #cccccc;
+}
+
+#record-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px; /* Adjusted size */
+    height: 60px; /* Adjusted size */
+    margin: 1em auto;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+#record-icon.active {
+    background-color: rgba(255, 0, 0, 0.9);
+    color: white;
+    border-color: rgba(255, 0, 0, 0.9);
+}
+
+footer {
+    background-color: rgba(51, 51, 51, 0.9);
+    color: #ffffff;
+    text-align: center;
+    padding: 0.5em; /* Reduced padding */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 0.8em; /* Smaller text size */
+}
+
+video {
+    width: 100%;
+    height: auto; /* Adjusted height to fit container */
+    max-height: 100%; /* Limits height to fit within container */
+    object-fit: cover; /* Ensures the video covers the container */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+/* this is code for speech with mic and upload options */
+
+
+.input-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.microphone-section, .upload-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon, .upload-icon {
+    font-size: 2em; /* Adjusted size */
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.icon:hover, .upload-icon:hover {
+    color: #cccccc;
+}
+
+#record-icon, .custom-file-upload {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px; /* Adjusted size */
+    height: 60px; /* Adjusted size */
+    margin: 1em auto;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+#record-icon.active, .custom-file-upload:hover {
+    background-color: rgba(255, 0, 0, 0.9);
+    color: white;
+    border-color: rgba(255, 0, 0, 0.9);
+}
+
+.custom-file-upload {
+    background-color: rgba(255, 255, 255, 0); /* Transparent background */
+    color: white;
+}
+
+.custom-file-upload i {
+    font-size: 2em; /* Match the microphone icon size */
+}
+
+.custom-file-upload p {
+    margin: 0;
+    color: white;
+    font-size: 1em; /* Adjusted size to match microphone text */
+}
+
