@@ -1,0 +1,48 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word To Wave</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+    <!-- Link to the favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}" type="image/png">
+
+    <!--link rel="stylesheet" href="static/CSS/styles.css"-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="nav-title">Word To Wave</h1>
+    </nav>
+    <div class="title-container" style="background-image: url('static/images/background.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+        <h1 id="title">Word To Wave</h1>
+    </div>
+
+    <section class="description-section">
+        <div class="description-summary">
+            <h2>Project Summary</h2>
+            <p>This project involves creating a website that converts spoken language into American Sign Language (ASL) using video output. The user speaks into a microphone, and the website processes the speech to display corresponding ASL videos.</p>
+            <a href = "{{ url_for('next_page') }}" id="scroll-button">
+
+            <!--</button> onclick="scrollToMainSection()"> -->
+                Let's Start Waving
+                <!-- <i class="fi fi-rr-arrow-right"></i> This is just for our understanding. -->
+        </a>
+        </div>
+        <div class="description-image">
+            <img src="static/images/hand.jpg" alt="Project Image">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Word To Wave</p>
+    </footer>
+
+    <script src="static/JS/scripts.js"></script>
+</body>
+</html>

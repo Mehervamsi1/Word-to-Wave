@@ -1,0 +1,202 @@
+
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff; /* White text color for contrast */
+    background-color: #000000; /* Black background color */
+    height: 200vh; /* Ensures there's enough content to scroll */
+}
+
+
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #000000; /* Dark black background */
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Slight shadow for depth */
+    z-index: 1000;
+}
+
+.nav-title {
+    font-size: 2rem;
+    color: #66fcf1; /* Pale Green text color */
+    text-shadow: 0px 0px 20px rgba(102, 252, 241, 0.7); /* Glow effect */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Landing Page Styles */
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    margin-top: 60px; /* Offset to account for the navbar */
+}
+
+#title {
+    font-size: 5rem; /* Start with a large font size */
+    color: #66fcf1; /* Teal color for the title */
+    text-shadow: 0px 0px 20px rgba(102, 252, 241, 0.7); /* Glow effect */
+    transition: font-size 1s ease, left 1s ease, top 1s ease, transform 1s ease; /* Slower and smooth transition */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.scrolled #title {
+    font-size: 2rem; /* Final font size */
+    left: 10px;
+    top: 10px;
+    transform: translate(0, 0);
+}
+
+.scrolled .nav-title {
+    opacity: 1;
+}
+
+/* Description Section Styles */
+/* Description Section Styles */
+.description-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: #000000; /* Black background */
+    color: #ffffff; /* White text color */
+}
+
+.description-summary {
+    width: 50%;
+}
+
+.description-image {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.description-image img {
+    width: 80%; /* Adjust width as needed */
+    height: auto;
+    border-radius: 10px;
+}
+
+#scroll-button {
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    border: none;
+    background-color: #45a29e;
+    color: #ffffff; /* White text color */
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0px 10px 30px rgba(69, 162, 158, 0.5);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+#scroll-button:hover {
+    background-color: #66fcf1;
+    color: #000000;
+    box-shadow: 0px 20px 50px rgba(102, 252, 241, 0.7);
+}
+
+#scroll-button i {
+    margin-left: 10px;
+}
+
+/* Main Section Styles */
+.main-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    grid-template-rows: auto auto;  /* Two rows */
+    gap: 20px;
+    padding: 20px;
+    background-color: #000;
+}
+
+.audio-input {
+    grid-column: 1 / 2; /* Place in the first column */
+    grid-row: 1 / 2;    /* Place in the first row */
+    background-color: #111;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.text-output {
+    grid-column: 1 / 2; /* Place in the first column */
+    grid-row: 2 / 3;    /* Place in the second row */
+    background-color: #111;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.video-output {
+    grid-column: 2 / 3; /* Place in the second column */
+    grid-row: 1 / 3;    /* Span across both rows */
+    background-color: #111;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: flex-start; /* Align items to the top */
+    align-items: center; /* Center horizontally */
+}
+
+.video-output h3 {
+    margin-bottom: 10px; /* Space between the title and video */
+    color: #fff; /* Ensure text is visible on dark background */
+    text-align: center; /* Center the title */
+}
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000000; /* Dark grey background */
+    color: #ffffff; /* White text color */
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Button Styles */
+.scroll-button {
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    border: none;
+    background-color: #45a29e;
+    color: #ffffff; /* White text color */
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0px 10px 30px rgba(69, 162, 158, 0.5);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.scroll-button:hover {
+    background-color: #66fcf1;
+    color: #000000;
+    box-shadow: 0px 20px 50px rgba(102, 252, 241, 0.7);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    #title {
+        font-size: 2.5rem;
+    }
+
+    .scroll-button {
+        font-size: 1.2rem;
+        padding: 10px 30px;
+    }
+}
